@@ -1,0 +1,44 @@
+<div class="container py-5">
+    <div class="input-group">
+        <form method="post">
+
+            <input type="search" id="search_box" name="search_box" class="form-control" />
+
+            <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+    </div>
+    <div class="row text-center text-white mb-5">
+        <div class="col-lg-7 mx-auto">
+            <h1 class="display-4">City List</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-8 mx-auto">
+            <!-- List group-->
+            <ul class="list-group shadow">
+                <!-- list group item-->
+                <?php
+                if(isset($locations)){
+                    foreach ($locations as $loc) {
+                        echo '<li class="list-group-item">
+                            <div class="media align-items-lg-center flex-column flex-lg-row p-3">
+                                <div class="media-body order-2 order-lg-1">
+                                <a href="http://localhost:8080/index/singleCity/' . $loc['lat'].'/'.$loc['lon']. '">
+                                    <h5 class="mt-0 font-weight-bold mb-2">' . $loc['name'] . '</h5>
+                                    </a>
+                                    <div class="d-flex align-items-center justify-content-between mt-1">
+                                        <h6 class="font-weight-bold my-2">' . $loc['region'] . '</h6>
+                                        <hr>
+                                        <h6 class="font-weight-bold my-2">' . $loc['country'] . '</h6>
+                                    </div>
+                                </div>
+                                </div> <!-- End -->
+                        </li>';
+                    }
+                }
+                ?>
+                <!-- End -->
+            </ul> <!-- End -->
+        </div>
+    </div>
+</div>

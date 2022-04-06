@@ -1,0 +1,53 @@
+<div class="super_container">
+  <a class="btn btn-primary" href="http://localhost:8080/index/index">Back</a>
+  <div class="single_product">
+    <div class="container-fluid mt-5" style=" background-color: #fff; padding: 11px;">
+      <div class="row">
+        <div class="col-lg-6 order-3">
+          <div class="product_description">
+            <div>
+              <hr class="singleline">
+              <div class="card" style="width: 40rem;">
+                <div class="card-body">
+                  <h5 class="card-title"><?php echo $city['location']['name'] ?></h5>
+                  <h6 class="card-subtitle mb-2 text-muted"><?php echo $city['location']['country'] ?></h6>
+                  <p class="card-text"><?php echo $city['location']['region'] ?>.</p>
+                  <form action="" method="POST">
+                    <input type="submit" class="card-link border border-primary p-1" value="Current weather" name="mybutton">
+                    <input type="submit" class="card-link border border-primary p-1" value="Forecast" name="mybutton">
+                    <input type="submit" class="card-link border border-primary p-1" value="History" name="mybutton">
+                    <input type="submit" class="card-link border border-primary p-1" value="Time Zone" name="mybutton">
+                    <input type="submit" class="card-link border border-primary p-1" value="Sports" name="mybutton">
+                    <input type="submit" class="card-link border border-primary p-1" value="Astronomy" name="mybutton">
+                    <input type="submit" class="card-link border border-primary p-1" value="Weather Alerts" name="mybutton">
+                    <input type="submit" class="card-link border border-primary p-1" value="Air Quality" name="mybutton">
+                  </form>
+                </div>
+              </div>
+
+              <hr class="singleline">
+
+            </div>
+            <div>
+              <div class="card" style="width: 18rem;">
+                <ul class="list-group list-group-flush">
+                  <?php
+                  if(isset($result)){
+                    foreach($result as $s){
+                      echo '<li class="list-group-item">'.$s.'</li>';
+                    }
+                  }
+                  
+                    
+                  ?>
+                </ul>
+              </div>
+              <?php
+              echo $this->response->getContent();
+              ?>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
