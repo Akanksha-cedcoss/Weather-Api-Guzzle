@@ -18,12 +18,12 @@
             <ul class="list-group shadow">
                 <!-- list group item-->
                 <?php
-                if(isset($locations)){
+                if (isset($locations)) {
                     foreach ($locations as $loc) {
                         echo '<li class="list-group-item">
                             <div class="media align-items-lg-center flex-column flex-lg-row p-3">
                                 <div class="media-body order-2 order-lg-1">
-                                <a href="http://localhost:8080/index/singleCity/' . $loc['lat'].'/'.$loc['lon']. '">
+                                <a href="http://localhost:8080/index/singleCity/' . $loc['lat'] . '/' . $loc['lon'] . '">
                                     <h5 class="mt-0 font-weight-bold mb-2">' . $loc['name'] . '</h5>
                                     </a>
                                     <div class="d-flex align-items-center justify-content-between mt-1">
